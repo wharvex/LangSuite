@@ -1,16 +1,14 @@
 ﻿using System.Diagnostics;
-using SemanticAnalysis;
+using LLVMSharp;
+using Shared;
 
 namespace AST;
 
 /// <summary>
 /// Abstract base class for the three types of variable usage (plain, member, and index).
 /// </summary>
-public abstract class VariableUsageNodeTemp : ExpressionNode
+public abstract class VariableUsageNodeTemp : INode
 {
-    /// <summary>
-    /// Indicates whether this <see cref="VariableUsageNodeTemp"/> references a global variable.
-    /// </summary>
     public bool NewReferencesGlobalVariable { get; set; }
 
     /// <summary>
@@ -19,12 +17,6 @@ public abstract class VariableUsageNodeTemp : ExpressionNode
     /// </summary>
     public bool NewIsInFuncCallWithVar { get; set; }
 
-    /// <summary>
-    /// Returns the monomorphized name of the variable, considering whether it references a global variable.
-    /// </summary>
-    /// <returns>
-    /// An <see cref="Index"/> representing the monomorphized name of the variable.
-    /// </returns>
     public Index NewMonomorphizedName()
     {
         var plain = GetPlain();
@@ -154,7 +146,7 @@ public abstract class VariableUsageNodeTemp : ExpressionNode
     ///<param name="dexInScope">The dictionary of variable declarations in scope.</param>
     ///<param name="exTyGetter">A function to get the type of an expression node.</param>
     ///<returns>
-    ///     The <see cref="Type"/> of the current variable usage node.
+    ///     The <see cref="System.Type"/> of the current variable usage node.
     ///     Throws a <see cref="SemanticErrorException"/> if the variable is not in scope, the index is not an integer, or the member is not found.
     ///</returns>
     public Type GetMyType(
@@ -323,4 +315,6 @@ public abstract class VariableUsageNodeTemp : ExpressionNode
     ///</summary>
     ///<param name="visitor">The variable usage visitor to accept.</param>
     public void Accept(IVariableUsageVisitor visitor) => visitor.Visit(this);
+
+    public INode Walk(IVisitor v) => this;
 }

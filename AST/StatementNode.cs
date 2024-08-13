@@ -1,8 +1,9 @@
 using System.Text;
+using Shared;
 
 namespace AST;
 
-public class StatementNode : ASTNode
+public abstract class StatementNode : INode
 {
     protected static string StatementListToString(List<StatementNode> statements)
     {

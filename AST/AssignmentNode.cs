@@ -1,6 +1,8 @@
+using Shared;
+
 namespace AST;
 
-public class AssignmentNode : StatementNode
+public class AssignmentNode : StatementNode, INode
 {
     public AssignmentNode(VariableUsagePlainNode target, ExpressionNode expression)
     {
@@ -26,52 +28,19 @@ public class AssignmentNode : StatementNode
 
     public ExpressionNode Expression { get; set; }
 
-    public override object[] returnStatementTokens()
-    {
-        object[] arr = { "", Target.Name, Expression.ToString() };
-
-        return arr;
-    }
-
-    public override void Accept(Visitor v) => v.Visit(this);
-
     public override string ToString()
     {
         return $"{Target} assigned as {Expression}";
     }
 
-    public override ASTNode Walk(WalkCompliantVisitor v)
+    public INode Walk(IVisitor v)
     {
-        var ret = v.Visit(this, out var shortCircuit);
-        if (shortCircuit)
-        {
-            return ret;
-        }
+        var ret = (AssignmentNode)v.Visit(this);
 
-        if (v is ExpressionTypingVisitor etv && etv.GetVuopTestFlag())
-        {
-            NewTarget = (VariableUsageNodeTemp)NewTarget.Walk(etv);
-        }
-        else
-        {
-            Target = (VariableUsagePlainNode)Target.Walk(v);
-        }
+        NewTarget = (VariableUsageNodeTemp)ret.NewTarget.Walk(v);
 
-        Expression = (ExpressionNode)Expression.Walk(v);
+        Expression = (ExpressionNode)ret.Expression.Walk(v);
 
-        return v.Final(this);
-    }
-
-    public override ASTNode? Walk(SAVisitor v)
-    {
-        var temp = v.Visit(this);
-        if (temp != null)
-            return temp;
-
-        Target = (VariableUsagePlainNode)(Target.Walk(v) ?? Target);
-
-        Expression = (ExpressionNode)(Expression.Walk(v) ?? Expression);
-
-        return v.PostWalk(this);
+        return v.Final(ret);
     }
 }

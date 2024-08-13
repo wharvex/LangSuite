@@ -1,28 +1,15 @@
-using Shank.ExprVisitors;
-using SemanticAnalysis;
+using Shared;
 
 namespace AST;
 
-public abstract class ExpressionNode : ASTNode
+public abstract class ExpressionNode : INode
 {
-    private Type? _type;
-    public Type Type
+    private IType? _type;
+    public IType Type
     {
-        get => _type ?? Type.Default;
+        get => _type ?? IType.Default;
         set => _type = value;
     }
 
-    public void Accept(IAstExpressionVisitor visitor) => visitor.Visit(this);
-
-    public override void Accept(Visitor v) => throw new NotImplementedException();
-
-    public override ASTNode Walk(WalkCompliantVisitor v)
-    {
-        var ret = v.Visit(this, out var shortCircuit);
-
-        if (shortCircuit)
-            return ret;
-
-        return v.Final(this);
-    }
+    public INode Walk(IVisitor v) => this;
 }

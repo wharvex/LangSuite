@@ -1,8 +1,8 @@
-using SemanticAnalysis;
+using Shared;
 
 namespace AST;
 
-public abstract class ASTNode
+public abstract class ASTNode : INode
 {
     public string InheritsDirectlyFrom { get; init; }
     public int Line { get; init; }
