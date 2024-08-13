@@ -1,6 +1,6 @@
 using Shank.ExprVisitors;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 ///<summary>
 ///     Represents the root (left-most identifier) of a <see cref="VariableUsageNodeTemp"/>.

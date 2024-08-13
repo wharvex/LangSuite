@@ -1,6 +1,6 @@
 ﻿using Shank.ExprVisitors;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class EmptyNode(string comment) : ASTNode
 {

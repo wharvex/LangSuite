@@ -1,4 +1,4 @@
-﻿namespace Shank.ASTNodes;
+﻿namespace AST;
 
 ///<summary>
 ///     Represents a node for member access within a variable usage in the abstract syntax tree (AST).

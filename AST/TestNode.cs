@@ -1,4 +1,4 @@
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class TestNode : FunctionNode
 {

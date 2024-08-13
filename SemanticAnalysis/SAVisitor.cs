@@ -1,9 +1,11 @@
+using AST;
+using LLVMSharp;
+using Microsoft.VisualBasic.CompilerServices;
 using Optional;
-using Shank.ASTNodes;
-using Shank.AstVisitorsTim;
-using Shank.Utils;
+using Shank;
+using IntegerType = LLVMSharp.IntegerType;
 
-namespace Shank;
+namespace SemanticAnalysis;
 
 public abstract class SAVisitor
 {

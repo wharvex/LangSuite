@@ -1,4 +1,4 @@
-namespace Shank.ASTNodes;
+namespace AST;
 
 public abstract class CallableNode(
     string name,

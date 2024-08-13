@@ -1,6 +1,6 @@
-﻿using Shank.AstVisitorsTim;
+﻿using SemanticAnalysis;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 ///<summary>
 ///     Represents a node for indexed variable usage in the abstract syntax tree (AST).

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class ElseNode : IfNode
 {

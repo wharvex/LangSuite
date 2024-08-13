@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Shank.ASTNodes;
+using AST;
 
 namespace Shank;
 

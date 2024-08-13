@@ -1,7 +1,6 @@
 using System.Text;
-using Shank.ExprVisitors;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class StatementNode : ASTNode
 {
@@ -24,15 +23,4 @@ public class StatementNode : ASTNode
     {
         throw new NotImplementedException();
     }
-
-    //public override ASTNode Walk(WalkCompliantVisitor v)
-    //{
-    //    var ret = v.Visit(this, out var shortCircuit);
-    //    if (shortCircuit)
-    //    {
-    //        return ret;
-    //    }
-
-    //    return v.Final(this);
-    //}
 }

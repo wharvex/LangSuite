@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Shank.ExprVisitors;
 using Shank.MathOppable;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class MathOpNode(ExpressionNode left, MathOpNode.MathOpType op, ExpressionNode right)
     : ExpressionNode

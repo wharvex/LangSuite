@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Shank.AstVisitorsTim;
+using SemanticAnalysis;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 /// <summary>
 /// Abstract base class for the three types of variable usage (plain, member, and index).

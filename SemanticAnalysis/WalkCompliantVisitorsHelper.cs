@@ -1,6 +1,6 @@
-﻿using Shank.ASTNodes;
+﻿using AST;
 
-namespace Shank.WalkCompliantVisitors;
+namespace SemanticAnalysis;
 
 public static class WalkCompliantVisitorsHelper
 {

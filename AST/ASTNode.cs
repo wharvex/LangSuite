@@ -1,19 +1,18 @@
-using Shank.ExprVisitors;
-using Shank.WalkCompliantVisitors;
+using SemanticAnalysis;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public abstract class ASTNode
 {
     public string InheritsDirectlyFrom { get; init; }
     public int Line { get; init; }
-    public string FileName { get; init; } // "The AST needs filename added near line number and position"
+    public string FileName { get; init; }
 
     protected ASTNode()
     {
         InheritsDirectlyFrom = GetType().BaseType?.Name ?? "None";
-        Line = Parser.Line;
-        FileName = Parser.FileName;
+        Line = 1;
+        FileName = "";
     }
 
     public abstract void Accept(Visitor v);

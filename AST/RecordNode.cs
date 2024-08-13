@@ -1,7 +1,7 @@
 using Shank.ExprVisitors;
-using Shank.WalkCompliantVisitors;
+using SemanticAnalysis;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class RecordNode(
     string name,

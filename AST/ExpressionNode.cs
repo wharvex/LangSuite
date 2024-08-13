@@ -1,8 +1,7 @@
-using Shank.AstVisitorsTim;
 using Shank.ExprVisitors;
-using Shank.WalkCompliantVisitors;
+using SemanticAnalysis;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public abstract class ExpressionNode : ASTNode
 {

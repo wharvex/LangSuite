@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Shank.ASTNodes;
+using AST;
 
-namespace Shank.AstVisitorsTim;
+namespace SemanticAnalysis;
 
 public interface IAstVisitor { }
 

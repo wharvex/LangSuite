@@ -1,6 +1,6 @@
 using Shank.ExprVisitors;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 ///<summary>
 ///     Represents a 'while' loop node in the abstract syntax tree (AST).

@@ -1,7 +1,7 @@
 using System.Text;
 using Shank.ExprVisitors;
 
-namespace Shank.ASTNodes;
+namespace AST;
 
 public class IfNode : StatementNode
 {
