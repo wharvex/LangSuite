@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StandardLibrary", "Standard
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticAnalysis", "SemanticAnalysis\SemanticAnalysis.csproj", "{312C68BF-F5C6-4019-A3A0-E5310D124918}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oopsies", "Oopsies\Oopsies.csproj", "{4DE6D92E-32DC-4BB5-BE6A-1BA82CA7E47E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors", "Errors\Errors.csproj", "{4DE6D92E-32DC-4BB5-BE6A-1BA82CA7E47E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{D7277B77-46FE-4079-9FBE-C54769D46FFF}"
 EndProject
@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Types", "Types\Types.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsInShank", "TestsInShank\TestsInShank.csproj", "{4193C0BD-A3C9-4A6E-A951-32512E827BC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsOld", "TestsOld\TestsOld.csproj", "{8110E51E-56F1-43B3-84E7-4D088059E56E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsOld", "TestsOld\TestsOld.csproj", "{8110E51E-56F1-43B3-84E7-4D088059E56E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

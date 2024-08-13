@@ -1,9 +1,7 @@
 using AST;
-using LLVMSharp;
 using Microsoft.VisualBasic.CompilerServices;
 using Optional;
 using Shank;
-using IntegerType = LLVMSharp.IntegerType;
 
 namespace SemanticAnalysis;
 
